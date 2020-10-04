@@ -14,11 +14,38 @@ int main()
 //	  deck.print();
 	  deck.shuffle();
 	  deck.print();
-	  std::cout<<"dealt card:\n";
-	  deck.dealCard().print();
-	  std::cout<<"dealt card:\n";
-	  deck.dealCard().print();
 
+	  Player player;
+	  Player dealer;
+
+	  player.drawCard(deck);
+	  std::cout<<"Player Score is :"<<player.getScore()<<"\n";
+
+	  dealer.drawCard(deck);
+	  std::cout<<"Dealer Score is :"<<dealer.getScore()<<"\n";
+
+	  player.drawCard(deck);
+	  std::cout<<"Player Score is :"<<player.getScore()<<"\n";
+
+	  dealer.drawCard(deck);
+	  std::cout<<"Dealer Score is :"<<dealer.getScore()<<"\n";
+
+
+	  player.drawCard(deck);
+	  std::cout<<"Player Score is :"<<player.getScore()<<"\n";
+
+	  dealer.drawCard(deck);
+	  std::cout<<"Dealer Score is :"<<dealer.getScore()<<"\n";
+
+	  if(player.isBusted())
+	  {
+		  std::cout<<"Player is busted\n";
+	  }
+
+	  if(dealer.isBusted())
+	  {
+		  std::cout<<"Dealer is busted\n";
+	  }
 	  return 0;
 }
 

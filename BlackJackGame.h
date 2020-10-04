@@ -9,6 +9,10 @@
 #define BLACKJACKGAME_H_
 
 #include <array>
+#include <vector>
+
+#define PLAYER_MAX_SCORE	21
+
 
 class Card
 {
@@ -90,7 +94,24 @@ public:
 
 };
 
+class Player
+{
+private:
+	std::vector<Card> 	m_CardList{};
+	int 				m_score{0};
 
+public:
+	Player()
+	{
+
+	}
+
+	bool isBusted();
+
+	void drawCard(Deck &deck);
+
+	int getScore();
+};
 
 
 #endif /* BLACKJACKGAME_H_ */
